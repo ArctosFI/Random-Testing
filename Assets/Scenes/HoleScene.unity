@@ -931,7 +931,7 @@ MonoBehaviour:
   wallMask:
     serializedVersion: 2
     m_Bits: 8192
-  cutoutRadius: 0
+  cutoutRadius: 0.1
 --- !u!114 &6581391128775450128
 MonoBehaviour:
   m_ObjectHideFlags: 0
