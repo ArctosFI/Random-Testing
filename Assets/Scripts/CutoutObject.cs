@@ -6,6 +6,7 @@ public class CutoutObject : MonoBehaviour
 {
     [SerializeField] Transform targetObject;
     [SerializeField] LayerMask wallMask;
+    [SerializeField] float cutoutRadius;
 
     Camera cam;
 
@@ -25,11 +26,11 @@ public class CutoutObject : MonoBehaviour
         for (int i = 0; i < hitObjects.Length; i++)
         {
             Material[] materials = hitObjects[i].transform.GetComponent<Renderer>().materials;
-
+            
             for (int j = 0; j < materials.Length; j++)
             {
                 materials[j].SetVector("_CutoffPos", cutoutPos);
-                materials[j].SetFloat("_CutoffSize", 0.1f);
+                materials[j].SetFloat("_CutoffSize", cutoutRadius);
                 materials[j].SetFloat("_FalloffSize", 0.05f);
             }
         }
